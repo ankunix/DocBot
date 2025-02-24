@@ -1,7 +1,7 @@
 # main.py
 
 import click
-from sec_edgar.utils import get_company_tickers, pull_all_history
+from sec_edgar.utils import get_company_tickers, pull_all_history, save_history_to_csv
 from sec_edgar.downloader import sync_download_all_forms
 from sec_edgar.config import HEADERS
 from sec_edgar.process_filings import parse_and_save_filings
@@ -25,6 +25,7 @@ def main(top_n, form, tickers):
         df_tickers_filtered = df_tickers
 
     df_history = pull_all_history(df_tickers_filtered, HEADERS)
+    save_history_to_csv(df_history)
     # Filter the history DataFrame for the given form type
     df_filtered = df_history[df_history['form'] == form]
     
@@ -35,7 +36,7 @@ def main(top_n, form, tickers):
     # Always use synchronous download
     sync_download_all_forms(df_filtered, form)
 
-    parse_and_save_filings()
+    parse_and_save_filings(df_filtered)
 
 if __name__ == "__main__":
     main()

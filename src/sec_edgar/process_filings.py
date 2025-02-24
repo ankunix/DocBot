@@ -8,7 +8,7 @@ from progiter.manager import ProgressManager  # added import
 
 logger = logging.getLogger(__name__)
 
-def parse_and_save_filings():
+def parse_and_save_filings(df_history):
     """
     Locate filing files in DATA_DIR, parse each using parse_10k_filing, and save a consolidated CSV.
     The output DataFrame includes columns: Text, ticker, accessionNumber, cik, and filepath.
@@ -25,12 +25,14 @@ def parse_and_save_filings():
                 sections = parse_10k_filing(file_path, 0)  # returns list of sections
                 # Extract ticker from the file's parent directory name.
                 ticker = os.path.basename(os.path.dirname(file_path))
+                primary_doc = os.path.basename(file_path)
+                row_history = df_history[df_history['primaryDocument'] == primary_doc].iloc[0]
                 for text in sections:
                     row_data = {
                         "Text": text,
                         "ticker": ticker,
-                        "accessionNumber": "",
-                        "cik": "",
+                        "accessionNumber": row_history['accessionNumber'],
+                        "cik": row_history['cik'],
                         "filepath": file_path
                     }
                     processed_data.append(row_data)
