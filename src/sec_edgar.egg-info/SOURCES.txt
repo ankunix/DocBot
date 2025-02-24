@@ -1,0 +1,29 @@
+.DS_Store
+.gitignore
+10K Text Extractor Version 2 Backup.ipynb
+10K_Income Statement & Revenue Backup.ipynb
+DataLoader.ipynb
+FinQ Extractor.ipynb
+FinQ Parser.ipynb
+README.md
+S3-Uploader.ipynb
+env.txt
+requirements.txt
+secedgarticker.json
+serverless.yml
+settoken.sh
+setup.py
+src/sec_edgar/__init__.py
+src/sec_edgar/cli.py
+src/sec_edgar/config.py
+src/sec_edgar/downloader.py
+src/sec_edgar/extractor.py
+src/sec_edgar/fillings.py
+src/sec_edgar/logger.py
+src/sec_edgar/parser.py
+src/sec_edgar/utils.py
+src/sec_edgar.egg-info/PKG-INFO
+src/sec_edgar.egg-info/SOURCES.txt
+src/sec_edgar.egg-info/dependency_links.txt
+src/sec_edgar.egg-info/entry_points.txt
+src/sec_edgar.egg-info/top_level.txt

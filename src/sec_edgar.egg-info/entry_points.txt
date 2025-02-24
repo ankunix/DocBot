@@ -1,0 +1,3 @@
+[console_scripts]
+sec_edgar = sec_edgar.cli:main
+

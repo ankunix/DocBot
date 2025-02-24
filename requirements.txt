@@ -1,0 +1,8 @@
+aiohttp
+async-timeout
+click
+pandas
+requests
+progiter
+beautifulsoup4
+rich
