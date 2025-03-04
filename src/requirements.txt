@@ -1,0 +1,10 @@
+# Existing requirements
+streamlit
+pandas
+
+# New requirements for local model
+torch
+transformers
+accelerate
+sentencepiece
+einops

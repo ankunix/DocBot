@@ -6,3 +6,11 @@ requests
 progiter
 beautifulsoup4
 rich
+deepseek
+streamlit>=1.22.0
+torch>=2.0.0
+transformers>=4.30.0
+accelerate
+bitsandbytes>=0.39.0
+sentence-transformers
+psutil
