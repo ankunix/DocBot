@@ -1,5 +1,5 @@
 """
-Local model implementation using Hugging Face transformers
+Wrapper for local language models
 """
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline

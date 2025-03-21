@@ -1,0 +1,8 @@
+[server]
+runOnSave = true
+# Use polling instead of the default watcher that's causing issues
+fileWatcherType = "poll"
+
+# Ignore PyTorch modules in the file watcher
+[server.fileWatcherIgnorePatterns]
+patterns = ["torch.*", "transformers.*", "*.pyc"]
